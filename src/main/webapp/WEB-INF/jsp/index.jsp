@@ -13,6 +13,12 @@
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-instagram"></a>
         </div>
+        <div id="nav">
+            <div class="nav-item"><a href="#">Drawings</a></div>
+            <div class="nav-item"><a href="#">Photography</a></div>
+            <div class="nav-item"><a href="#">About</a></div>
+            <div class="nav-item"><a href="#">Contact</a></div>
+        </div>
         <div id="content">
             <div class="content-image"></div>
             <div class="content-image"></div>
@@ -35,12 +41,6 @@
             <div class="content-image"></div>
             <div class="content-image"></div>
             <div class="content-image"></div>
-            <div id="nav">
-                <div class="nav-item"><a href="#">Drawings</a></div>
-                <div class="nav-item"><a href="#">Photography</a></div>
-                <div class="nav-item"><a href="#">About</a></div>
-                <div class="nav-item"><a href="#">Contact</a></div>
-            </div>
         </div>
         <div id="footer">Made with <span class="red-font">&hearts;</span> by Pratyush Choudhary</div>
     </body>
