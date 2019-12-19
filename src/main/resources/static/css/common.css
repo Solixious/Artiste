@@ -75,6 +75,7 @@ div#footer {
     box-shadow: 5px 5px 15px 0px #878787;
     background: white;
     opacity: 0.8;
+    z-index: 1;
 }
 .nav-item {
     float: left;
