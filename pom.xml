@@ -48,6 +48,11 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>${tomcat-embed-jasper.scope}</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

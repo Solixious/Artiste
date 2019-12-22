@@ -20,27 +20,19 @@
             <div class="nav-item"><a href="#">Contact</a></div>
         </div>
         <div id="content">
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
-            <div class="content-image"></div>
+            <div class="content-image"><img src="/file/1.jpg"/></div>
+            <div class="content-image"><img src="/file/2.jpg"/></div>
+            <div class="content-image"><img src="/file/3.jpg"/></div>
+            <div class="content-image"><img src="/file/4.jpg"/></div>
+            <div class="content-image"><img src="/file/5.jpg"/></div>
+            <div class="content-image"><img src="/file/6.jpg"/></div>
+            <div class="content-image"><img src="/file/7.jpg"/></div>
+            <div class="content-image"><img src="/file/8.jpg"/></div>
+            <div class="content-image"><img src="/file/9.jpg"/></div>
+            <div class="content-image"><img src="/file/10.jpg"/></div>
+            <div class="content-image"><img src="/file/11.jpg"/></div>
+            <div class="content-image"><img src="/file/12.jpg"/></div>
+            <div class="content-image"><img src="/file/13.jpg"/></div>
         </div>
         <div id="footer">Made with <span class="red-font">&hearts;</span> by Pratyush Choudhary</div>
     </body>
