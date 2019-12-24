@@ -120,6 +120,20 @@ div#footer {
 #content-photography {
     display: none;
 }
+#content-about {
+    display: none;
+}
+#content-contact {
+    display: none;
+}
 #content-drawing {
     display: block;
+}
+.show {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 1000ms;
 }
