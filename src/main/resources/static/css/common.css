@@ -94,7 +94,6 @@ div#footer {
 }
 .content-image {
     margin: 1% 0 0 1%;
-    background: #f5f5f5;
     width: 24%;
     height: 250px;
     float: left;
@@ -117,4 +116,10 @@ div#footer {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #d0d0d0;
+}
+#content-photography {
+    display: none;
+}
+#content-drawing {
+    display: block;
 }
