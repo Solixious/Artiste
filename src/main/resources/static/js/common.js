@@ -1,9 +1,5 @@
-var drawings = ['/file/1.jpg', '/file/2.jpg', '/file/3.jpg', '/file/4.jpg', '/file/5.jpg',
-                '/file/6.jpg', '/file/7.jpg', '/file/8.jpg', '/file/9.jpg', '/file/10.jpg',
-                '/file/11.jpg', '/file/12.jpg', '/file/13.jpg'];
-var photographs = ['/file/6.jpg', '/file/7.jpg', '/file/8.jpg', '/file/9.jpg', '/file/10.jpg',
-                '/file/11.jpg', '/file/12.jpg', '/file/13.jpg', '/file/1.jpg', '/file/2.jpg',
-                '/file/3.jpg', '/file/4.jpg', '/file/5.jpg',];
+var drawings;
+var photographs;
 var contentDrawing = 'content-drawing';
 var contentPhotography = 'content-photography';
 var block = 'block';
@@ -38,14 +34,32 @@ function selectDrawing() {
     document.getElementById(contentDrawing).style.display = block;
     document.getElementById('link-drawing').style.color = navSelected;
     document.title = "My Drawings";
-    loadImages(contentDrawing, drawings);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var drawings = JSON.parse(this.responseText);
+            loadImages(contentDrawing, drawings);
+        }
+    };
+    xhttp.open("GET", "/api/drawings", true);
+    xhttp.send();
 }
 function selectPhotography() {
     hideAll();
     document.getElementById(contentPhotography).style.display = block;
     document.getElementById('link-photography').style.color = navSelected;
     document.title = "Photography";
-    loadImages(contentPhotography, photographs);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var photographs = JSON.parse(this.responseText);
+            loadImages(contentPhotography, photographs);
+        }
+    };
+    xhttp.open("GET", "/api/photographs", true);
+    xhttp.send();
 }
 function selectAbout() {
     hideAll();
