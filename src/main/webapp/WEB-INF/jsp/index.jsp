@@ -15,10 +15,10 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
         <div id="nav">
-            <div class="nav-item"><a href="#" onclick="selectDrawing()">Drawings</a></div>
-            <div class="nav-item"><a href="#" onclick="selectPhotography()">Photography</a></div>
-            <div class="nav-item"><a href="#" onclick="selectAbout()">About</a></div>
-            <div class="nav-item"><a href="#" onclick="selectContact()">Contact</a></div>
+            <div class="nav-item"><a href="#" id="link-drawing" onclick="selectDrawing()">Drawings</a></div>
+            <div class="nav-item"><a href="#" id="link-photography" onclick="selectPhotography()">Photography</a></div>
+            <div class="nav-item"><a href="#" id="link-about" onclick="selectAbout()">About</a></div>
+            <div class="nav-item"><a href="#" id="link-contact" onclick="selectContact()">Contact</a></div>
         </div>
         <div id="content">
             <div id="content-drawing">
