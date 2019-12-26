@@ -90,7 +90,7 @@ div#footer {
     transition: 0.5s;
 }
 .nav-item a:hover {
-    color: #000 !important;
+    color: red !important;
 }
 .content-image {
     margin: 1% 0 0 1%;
