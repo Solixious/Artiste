@@ -1,11 +1,30 @@
+
+var ME_DRAWINGS = 'My Drawings';
+var PHOTOGRAPHY = 'Photography';
+var ABOUT_ME = 'About Me';
+var CONTACT_ME = 'Contact Me';
+var API_DRAWINGS = '/api/drawings';
+var API_PHOTOGRAPHS = '/api/photographs';
+var GET = 'GET';
+
 var drawings;
 var photographs;
 var contentDrawing = 'content-drawing';
+var linkDrawing = 'link-drawing';
 var contentPhotography = 'content-photography';
+var linkPhotography = 'link-photography';
+var contentAbout = 'content-about';
+var linkAbout = 'link-about';
+var contentContact = 'content-contact';
+var linkContact = 'link-contact';
+var contentBlocking = 'content-blocking';
+var contentImage = 'content-image';
 var block = 'block';
 var none = 'none';
-var navSelected = '#cc3333';
-var navUnSelected = '#878787';
+var div = 'div';
+var img = 'img';
+var navSelectedColor = '#cc3333';
+var navUnselectedColor = '#878787';
 
 function init() {
     selectDrawing();
@@ -14,15 +33,15 @@ function init() {
 function loadImages(divName, images) {
     var imageDiv = document.getElementById(divName);
 
-    document.getElementById('content-blocking').style.display = 'none';
+    document.getElementById(contentBlocking).style.display = none;
     if(imageDiv.childElementCount !== 0) {
         return;
     }
     var i;
     for(i = 0; i < images.length; i++) {
-        var newDiv = document.createElement('div');
-        newDiv.className = 'content-image';
-        var newImg = document.createElement('img');
+        var newDiv = document.createElement(div);
+        newDiv.className = contentImage;
+        var newImg = document.createElement(img);
         newImg.src = images[i];
         newDiv.appendChild(newImg);
         imageDiv.appendChild(newDiv);
@@ -32,9 +51,9 @@ function loadImages(divName, images) {
 function selectDrawing() {
     hideAll();
     document.getElementById(contentDrawing).style.display = block;
-    document.getElementById('link-drawing').style.color = navSelected;
-    document.title = "My Drawings";
-    document.getElementById('content-blocking').style.display = 'block';
+    document.getElementById(linkDrawing).style.color = navSelectedColor;
+    document.title = ME_DRAWINGS;
+    document.getElementById(contentBlocking).style.display = block;
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -43,15 +62,15 @@ function selectDrawing() {
             loadImages(contentDrawing, drawings);
         }
     };
-    xhttp.open("GET", "/api/drawings", true);
+    xhttp.open(GET, API_DRAWINGS, true);
     xhttp.send();
 }
 function selectPhotography() {
     hideAll();
     document.getElementById(contentPhotography).style.display = block;
-    document.getElementById('link-photography').style.color = navSelected;
-    document.title = "Photography";
-    document.getElementById('content-blocking').style.display = 'block';
+    document.getElementById(linkPhotography).style.color = navSelectedColor;
+    document.title = PHOTOGRAPHY;
+    document.getElementById(contentBlocking).style.display = block;
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -60,36 +79,28 @@ function selectPhotography() {
             loadImages(contentPhotography, photographs);
         }
     };
-    xhttp.open("GET", "/api/photographs", true);
+    xhttp.open(GET, API_PHOTOGRAPHS, true);
     xhttp.send();
 }
 function selectAbout() {
     hideAll();
-    document.getElementById('content-about').style.display = block;
-    document.getElementById('link-about').style.color = navSelected;
-    document.title = "About Me";
+    document.getElementById(contentAbout).style.display = block;
+    document.getElementById(linkAbout).style.color = navSelectedColor;
+    document.title = ABOUT_ME;
 }
 function selectContact() {
     hideAll();
-    document.getElementById('content-contact').style.display = block;
-    document.getElementById('link-contact').style.color = navSelected;
-    document.title = "Contact Me";
+    document.getElementById(contentContact).style.display = block;
+    document.getElementById(linkContact).style.color = navSelectedColor;
+    document.title = CONTACT_ME;
 }
 function hideAll() {
-    document.getElementById('content-photography').style.display = none;
-    document.getElementById('content-drawing').style.display = none;
-    document.getElementById('content-about').style.display = none;
-    document.getElementById('content-contact').style.display = none;
-    document.getElementById('link-photography').style.color = navUnSelected;
-    document.getElementById('link-drawing').style.color = navUnSelected;
-    document.getElementById('link-about').style.color = navUnSelected;
-    document.getElementById('link-contact').style.color = navUnSelected;
-}
-function fadeIn(el){
-  el.classList.add('show');
-  el.classList.remove('hide');
-}
-function fadeOut(el){
-  el.classList.add('hide');
-  el.classList.remove('show');
+    document.getElementById(contentPhotography).style.display = none;
+    document.getElementById(contentDrawing).style.display = none;
+    document.getElementById(contentAbout).style.display = none;
+    document.getElementById(contentContact).style.display = none;
+    document.getElementById(linkPhotography).style.color = navUnselectedColor;
+    document.getElementById(linkDrawing).style.color = navUnselectedColor;
+    document.getElementById(linkAbout).style.color = navUnselectedColor;
+    document.getElementById(linkContact).style.color = navUnselectedColor;
 }

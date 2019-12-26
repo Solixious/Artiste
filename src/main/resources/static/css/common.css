@@ -129,14 +129,6 @@ div#footer {
 #content-drawing {
     display: block;
 }
-.show {
-    opacity: 1;
-    transition: opacity 1000ms;
-}
-.hide {
-    opacity: 0;
-    transition: opacity 1000ms;
-}
 #content-blocking {
     width: 200px;
     height: 200px;
