@@ -9,7 +9,7 @@
     </head>
 
     <body onload="init()">
-        <h1 id="heading">Arts By <span class="black-font">Pratyush</span></h1>
+        <h1 id="heading">Arts By <span class="red-font">Pratyush</span></h1>
         <div id="social-links">
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-instagram"></a>
@@ -32,6 +32,18 @@
             </div>
             <div id="content-contact">
                 Contact Me
+            </div>
+            <div id="content-blocking">
+                <div class="loadingio-spinner-spinner-dun95lzc55k">
+                    <div class="ldio-8bgywlk1raa">
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="footer">Made with <span class="red-font">&hearts;</span> by Pratyush Choudhary</div>

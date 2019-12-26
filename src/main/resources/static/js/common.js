@@ -14,10 +14,10 @@ function init() {
 function loadImages(divName, images) {
     var imageDiv = document.getElementById(divName);
 
+    document.getElementById('content-blocking').style.display = 'none';
     if(imageDiv.childElementCount !== 0) {
         return;
     }
-
     var i;
     for(i = 0; i < images.length; i++) {
         var newDiv = document.createElement('div');
@@ -34,6 +34,7 @@ function selectDrawing() {
     document.getElementById(contentDrawing).style.display = block;
     document.getElementById('link-drawing').style.color = navSelected;
     document.title = "My Drawings";
+    document.getElementById('content-blocking').style.display = 'block';
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -50,6 +51,7 @@ function selectPhotography() {
     document.getElementById(contentPhotography).style.display = block;
     document.getElementById('link-photography').style.color = navSelected;
     document.title = "Photography";
+    document.getElementById('content-blocking').style.display = 'block';
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
