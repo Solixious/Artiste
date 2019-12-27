@@ -47,12 +47,15 @@ body {
   margin: 5px 5px;
   border-radius: 50%;
 }
-.fa:hover {
-    opacity: 0.7;
+.fa-facebook:hover {
+    background: #3B5998;
 }
 .fa-facebook {
   background: #878787;
   color: white;
+}
+.fa-instagram:hover {
+    background: #125688;
 }
 .fa-instagram {
   background: #878787;
