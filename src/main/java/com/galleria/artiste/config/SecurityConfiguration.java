@@ -19,6 +19,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private SimpleAuthenticationSuccessHandler successHandler;
+
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -29,8 +32,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable();
         httpSecurity.authorizeRequests().antMatchers("/resources/**", "/css/**",
             "/js/**", "/file/**", "/registration", "/home/**", "/api/**", "/")
-            .permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and()
-            .logout().permitAll();
+            .permitAll().anyRequest().authenticated().and().formLogin().successHandler(successHandler)
+            .loginPage("/login").permitAll().and().logout().permitAll();
     }
 
     @Autowired
