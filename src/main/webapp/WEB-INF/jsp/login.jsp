@@ -18,7 +18,7 @@
 					<p><input name="username" type="text" class="form-element form-input" placeholder="Username"
 						autofocus="true"/></p>
 					<p><input name="password" type="password" class="form-element form-input" placeholder="Password"/></p>
-					<p><span>${error}</span></p>
+					<p><span class="red-font">${error}</span></p>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<p><button class="form-button-primary" type="submit">Log In</button></p>
 					<p><div class="form-extra-links">
