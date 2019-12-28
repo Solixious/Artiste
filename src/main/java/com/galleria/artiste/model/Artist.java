@@ -2,6 +2,7 @@ package com.galleria.artiste.model;
 
 import com.galleria.artiste.model.common.BaseEntity;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,6 +12,7 @@ import java.util.Collection;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Artist extends BaseEntity implements UserDetails {
 
     private String email;
@@ -18,6 +20,8 @@ public class Artist extends BaseEntity implements UserDetails {
     private String firstName;
     private String lastName;
     private String password;
+    @Transient
+    private String confirmPassword;
     private String displayPicture;
 
     @Transient

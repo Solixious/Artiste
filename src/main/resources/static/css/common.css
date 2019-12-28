@@ -336,7 +336,7 @@ button.form-button-primary {
     margin: 4px 2px;
     cursor: pointer;
 }
-form.form.form-login {
+form.form.form-login, form.form.form-register {
     margin-left: 3%;
 }
 .form-extra-links a {

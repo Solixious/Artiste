@@ -6,4 +6,5 @@ package com.galleria.artiste.constants;
 public interface JspMapping {
 
     String LOGIN = "login";
+    String REGISTRATION = "registration";
 }
