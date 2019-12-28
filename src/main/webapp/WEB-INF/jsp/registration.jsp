@@ -13,7 +13,7 @@
     <body>
         <h1 id="heading">Arts By <span class="red-font">Pratyush</span></h1>
         <div id="content">
-			<form:form method="POST" modelAttribute="userForm" class="form form-register">
+			<form:form method="POST" modelAttribute="artistForm" class="form form-register">
 			    <h2>Artist Registration</h2>
 				<div class="form-content">
                     <p><spring:bind path="username">

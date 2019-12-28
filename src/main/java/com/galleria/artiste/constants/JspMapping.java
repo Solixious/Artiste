@@ -7,4 +7,5 @@ public interface JspMapping {
 
     String LOGIN = "login";
     String REGISTRATION = "registration";
+    String ADMIN = "admin";
 }
