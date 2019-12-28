@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class DrawingServiceImpl implements DrawingService {
 
+  private static final int PAGE_SIZE = 20;
+
   @Autowired
   private DrawingRepository drawingRepository;
 
@@ -26,6 +28,6 @@ public class DrawingServiceImpl implements DrawingService {
 
   @Override
   public Page<Drawing> getAllDrawings(int pageNo) {
-    return drawingRepository.findAll(PageRequest.of(pageNo, 20));
+    return drawingRepository.findAll(PageRequest.of(pageNo, PAGE_SIZE));
   }
 }
