@@ -5,7 +5,7 @@
         </title>
         <link href="/css/common.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <script type="text/javascript" src="/js/common.js"></script>
+        <script type="text/javascript" src="/js/admin.js"></script>
     </head>
 
     <body onload="init()">
@@ -15,8 +15,8 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
         <div id="nav">
-            <div class="nav-item"><a href="#" id="link-drawing" onclick="upload()">Upload</a></div>
-            <div class="nav-item"><a href="#" id="link-photography" onclick="list()">List</a></div>
+            <div class="nav-item"><a href="#" id="link-upload" onclick="upload()">Upload</a></div>
+            <div class="nav-item"><a href="#" id="link-list" onclick="list()">List</a></div>
             <div class="nav-item"><a href="#" id="link-edit" onclick="edit()">Edit</a></div>
             <div class="nav-item"><a href="#" id="link-settings" onclick="settings()">Settings</a></div>
         </div>
