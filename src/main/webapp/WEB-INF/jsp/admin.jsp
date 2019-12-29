@@ -22,7 +22,7 @@
         </div>
         <div id="content">
             <div id="content-upload">
-                <form class="form form-upload">
+                <form class="form form-upload" enctype="multipart/form-data" method="post" action="${contextPath}/art">
                     <h2>Upload</h2>
                     <p><input name="title" type="text" class="form-element form-input" placeholder="Title" autofocus="true"/></p>
                     <p>
@@ -39,10 +39,11 @@
                     </p>
                     <p>
                         <label class="custom-file-upload">
-                            Choose File<input id="artwork" name="artwork" type="file" onchange="readUrl(this)"/>
+                            Choose File<input id="artwork" name="file" type="file" onchange="readUrl(this)"/>
                         </label>
                         <span id="file-selected"> </span>
                     </p>
+                    <p><button class="form-button-primary" type="submit">Submit</button></p>
                     <img id="preview" src="#" style="display:none;width: 50%"/>
                 </form>
             </div>

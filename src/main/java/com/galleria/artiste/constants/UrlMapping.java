@@ -5,4 +5,8 @@ public interface UrlMapping {
   String USER_LOGIN = "/login";
   String USER_REGISTRATION = "/registration";
   String ADMIN = "/admin";
+  String API = "/api";
+  String DRAWINGS = "/drawings";
+  String PHOTOGRAPHS = "/photographs";
+  String ART = "/art";
 }
