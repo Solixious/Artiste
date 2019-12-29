@@ -24,7 +24,19 @@
             <div id="content-upload">
                 <form class="form form-upload">
                     <h2>Upload</h2>
-                    <p><input name="title" type="text" class="form-element form-input" placeholder="Title"/></p>
+                    <p><input name="title" type="text" class="form-element form-input" placeholder="Title" autofocus="true"/></p>
+                    <p>
+                        <label class="radio-label">
+                            Drawing
+                            <input type="radio" name="artType" checked="checked" value="Drawing"/>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-label">
+                            Photograph
+                            <input type="radio" name="artType" value="Photograph"/>
+                            <span class="checkmark"></span>
+                        </label>
+                    </p>
                     <p>
                         <label class="custom-file-upload">
                             Choose File<input id="artwork" name="artwork" type="file" onchange="readUrl(this)"/>
