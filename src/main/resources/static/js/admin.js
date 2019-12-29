@@ -6,6 +6,7 @@ var CONTACT_ME = 'Admin - Settings';
 var API_DRAWINGS = '/api/drawings';
 var API_PHOTOGRAPHS = '/api/photographs';
 var GET = 'GET';
+var SRC = 'src';
 
 var drawings;
 var photographs;
@@ -19,6 +20,9 @@ var contentSettings = 'content-settings';
 var linkSettings = 'link-settings';
 var contentBlocking = 'content-blocking';
 var contentImage = 'content-image';
+var preview = 'preview';
+var fileSelected = 'file-selected';
+var artwork = 'artwork';
 var block = 'block';
 var none = 'none';
 var div = 'div';
@@ -92,4 +96,17 @@ function hideAll() {
     document.getElementById(linkUpload).style.color = navUnselectedColor;
     document.getElementById(linkEdit).style.color = navUnselectedColor;
     document.getElementById(linkSettings).style.color = navUnselectedColor;
+}
+function readUrl(input) {
+  document.getElementById(preview).style.display = none;
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById(preview).src = e.target.result;
+      document.getElementById(preview).style.display = block;
+      document.getElementById(fileSelected).innerHTML = document.getElementById(artwork).value;
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
 }

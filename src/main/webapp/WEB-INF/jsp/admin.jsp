@@ -9,7 +9,7 @@
     </head>
 
     <body onload="init()">
-        <h1 id="heading">Arts By <span class="red-font">Pratyush</span></h1>
+        <h1 id="heading">Welcome Back <span class="red-font">Pratyush</span></h1>
         <div id="social-links">
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-instagram"></a>
@@ -22,7 +22,17 @@
         </div>
         <div id="content">
             <div id="content-upload">
-
+                <form class="form form-upload">
+                    <h2>Upload</h2>
+                    <p><input name="title" type="text" class="form-element form-input" placeholder="Title"/></p>
+                    <p>
+                        <label class="custom-file-upload">
+                            Choose File<input id="artwork" name="artwork" type="file" onchange="readUrl(this)"/>
+                        </label>
+                        <span id="file-selected"> </span>
+                    </p>
+                    <img id="preview" src="#" style="display:none;width: 50%"/>
+                </form>
             </div>
             <div id="content-list">
 

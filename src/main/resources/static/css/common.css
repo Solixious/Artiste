@@ -336,9 +336,40 @@ button.form-button-primary {
     margin: 4px 2px;
     cursor: pointer;
 }
-form.form.form-login, form.form.form-register {
+form.form.form-login, form.form.form-register, form.form.form-upload {
     margin-left: 3%;
 }
 .form-extra-links a {
     margin-right: 16px;
+}
+#preview {
+    position: absolute;
+    top: 115px;
+    left: 412px;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    background-color: #CC3333;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: none;
+    float: left;
+    height: 20px;
+}
+span#file-selected {
+    padding-top: 4px;
+    float: left;
+    border: 2px solid #AAAAAA;
+    border-left: none;
+    width: 170px;
+    height: 32px;
+    margin-left: -2px;
+    margin-top: 4px;
+    padding-left: 10px;
 }
