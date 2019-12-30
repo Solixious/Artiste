@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 public class ArtServiceImpl implements ArtService {
 
   private static final int PAGE_SIZE = 20;
+  private static final String DRAWING = "Drawing";
+  private static final String PHOTOGRAPH = "Photograph";
 
   @Autowired
   private ArtRepository artRepository;
@@ -28,6 +30,11 @@ public class ArtServiceImpl implements ArtService {
 
   @Override
   public Page<Art> getAllDrawings(int pageNo) {
-    return artRepository.findAll(PageRequest.of(pageNo, PAGE_SIZE));
+    return artRepository.findByArtType(DRAWING, PageRequest.of(pageNo, PAGE_SIZE));
+  }
+
+  @Override
+  public Page<Art> getAllPhotographs(int pageNo) {
+    return artRepository.findByArtType(PHOTOGRAPH, PageRequest.of(pageNo, PAGE_SIZE));
   }
 }

@@ -42,7 +42,7 @@ function loadImages(divName, images) {
         var newDiv = document.createElement(div);
         newDiv.className = contentImage;
         var newImg = document.createElement(img);
-        newImg.src = images[i];
+        newImg.src = images[i].image;
         newDiv.appendChild(newImg);
         imageDiv.appendChild(newDiv);
     }

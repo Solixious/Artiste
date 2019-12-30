@@ -8,4 +8,5 @@ public interface ArtService {
   void save(Art art);
   Art getByTitle(String title);
   Page<Art> getAllDrawings(int pageNo);
+  Page<Art> getAllPhotographs(int pageNo);
 }
