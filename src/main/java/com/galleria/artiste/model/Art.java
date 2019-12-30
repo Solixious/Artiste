@@ -7,11 +7,8 @@ import javax.persistence.Entity;
 
 @Data
 @Entity
-public class Drawing extends BaseEntity {
+public class Art extends BaseEntity {
 
   private String title;
-  private String path;
   private String image;
-  private String thumb;
-  private String original;
 }

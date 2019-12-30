@@ -3,8 +3,8 @@ package com.galleria.artiste.controller;
 import com.galleria.artiste.constants.AttributeName;
 import com.galleria.artiste.constants.JspMapping;
 import com.galleria.artiste.constants.UrlMapping;
-import com.galleria.artiste.model.Drawing;
-import com.galleria.artiste.service.DrawingService;
+import com.galleria.artiste.model.Art;
+import com.galleria.artiste.service.ArtService;
 import com.galleria.artiste.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,14 +19,14 @@ public class ArtController {
   private FileStorageService fileStorageService;
 
   @Autowired
-  private DrawingService drawingService;
+  private ArtService artService;
 
   @PostMapping(UrlMapping.ART)
-  public String postDrawing(@RequestParam(AttributeName.FILE) MultipartFile file, Drawing drawing) {
+  public String postArt(@RequestParam(AttributeName.FILE) MultipartFile file, Art art) {
     try {
-      String filePath = fileStorageService.storeFile(file, drawing.getTitle() + ".jpg");
-      drawing.setImage(filePath);
-      drawingService.save(drawing);
+      String filePath = fileStorageService.storeFile(file, art.getTitle() + ".jpg");
+      art.setImage("/file/" + filePath);
+      artService.save(art);
     } catch (Exception e) {
       e.printStackTrace();
     }

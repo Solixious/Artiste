@@ -1,11 +1,11 @@
 package com.galleria.artiste.repository;
 
-import com.galleria.artiste.model.Drawing;
+import com.galleria.artiste.model.Art;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DrawingRepository extends PagingAndSortingRepository<Drawing, Long> {
+public interface ArtRepository extends PagingAndSortingRepository<Art, Long> {
 
-  Drawing findByPath(String path);
+  Art findByTitle(String title);
 }
