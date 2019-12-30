@@ -3,8 +3,8 @@ var ME_DRAWINGS = 'My Drawings';
 var PHOTOGRAPHY = 'Photography';
 var ABOUT_ME = 'About Me';
 var CONTACT_ME = 'Contact Me';
-var API_DRAWINGS = '/api/drawings';
-var API_PHOTOGRAPHS = '/api/photographs';
+var API_DRAWINGS = '/api/drawings?page=0';
+var API_PHOTOGRAPHS = '/api/photographs?page=0';
 var GET = 'GET';
 
 var drawings;

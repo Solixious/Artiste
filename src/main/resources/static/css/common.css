@@ -39,6 +39,9 @@ body {
 .red-font {
     color: #cc3333;
 }
+div#social-links a:hover {
+    color: white !important;
+}
 .fa {
   padding: 7px;
   width: 1em;
