@@ -372,6 +372,7 @@ span#file-selected {
     margin-left: -2px;
     margin-top: 4px;
     padding-left: 10px;
+    overflow: hidden;
 }
 input[type="radio"] {
     margin-right: 5px;
@@ -383,7 +384,6 @@ input[type="radio"] {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -392,6 +392,7 @@ input[type="radio"] {
   user-select: none;
   width: 90px;
   float: left;
+  margin-bottom: 16px;
 }
 .radio-label input {
   position: absolute;
@@ -433,4 +434,9 @@ input[type="radio"] {
 form.form.form-upload {
     width: 320px;
     float: left;
+}
+button.form-button-primary.upload {
+    position: absolute;
+    left: 50px;
+    top: 300px;
 }

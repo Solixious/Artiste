@@ -43,7 +43,7 @@
                         </label>
                         <span id="file-selected"> </span>
                     </p>
-                    <p><button class="form-button-primary" type="submit">Submit</button></p>
+                    <p><button class="form-button-primary upload" type="submit">Submit</button></p>
                     <img id="preview" src="#" style="display:none;width: 50%"/>
                 </form>
             </div>
