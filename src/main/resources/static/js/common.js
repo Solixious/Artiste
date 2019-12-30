@@ -9,6 +9,7 @@ var GET = 'GET';
 
 var drawings;
 var photographs;
+var myList;
 var contentDrawing = 'content-drawing';
 var linkDrawing = 'link-drawing';
 var contentPhotography = 'content-photography';
@@ -28,11 +29,14 @@ var img = 'img';
 var navSelectedColor = '#cc3333';
 var navUnselectedColor = '#878787';
 
+var drawing = 'drawing';
+var photograph = 'photograph';
+
 function init() {
     selectDrawing();
 }
 
-function loadImages(divName, images) {
+function loadImages(divName, images, type) {
     var imageDiv = document.getElementById(divName);
 
     document.getElementById(contentBlocking).style.display = none;
@@ -45,16 +49,10 @@ function loadImages(divName, images) {
         newDiv.className = contentImage;
         var newImg = document.createElement(img);
         newImg.src = images[i].image;
-        newImg.setAttribute('onclick', 'displayPicture(\'' + images[i].image + '\')');
+        newImg.setAttribute('onclick', 'displayPicture(' + i + ', ' + type + ')');
         newDiv.appendChild(newImg);
         imageDiv.appendChild(newDiv);
     }
-}
-
-function displayPicture(image) {
-    document.getElementById(bigImageDiv).style.display=block;
-    document.getElementById(bigImage).src=image;
-    console.log(image);
 }
 
 function selectDrawing() {
@@ -67,8 +65,8 @@ function selectDrawing() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var drawings = JSON.parse(this.responseText);
-            loadImages(contentDrawing, drawings);
+            drawings = JSON.parse(this.responseText);
+            loadImages(contentDrawing, drawings, drawing);
         }
     };
     xhttp.open(GET, API_DRAWINGS, true);
@@ -84,8 +82,8 @@ function selectPhotography() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var photographs = JSON.parse(this.responseText);
-            loadImages(contentPhotography, photographs);
+            photographs = JSON.parse(this.responseText);
+            loadImages(contentPhotography, photographs, photograph);
         }
     };
     xhttp.open(GET, API_PHOTOGRAPHS, true);
@@ -115,4 +113,35 @@ function hideAll() {
 }
 function hideBigImage() {
     document.getElementById(bigImageDiv).style.display=none;
+    var div = document.getElementById(bigImageDiv);
+    div.onkeydown = null;
+}
+function displayPicture(index, type) {
+    if(type == drawing) {
+        myList = drawings;
+    } else {
+        myList = photographs;
+    }
+    document.getElementById(bigImageDiv).style.display=block;
+    document.getElementById(bigImage).src=myList[index].image;
+    var div = document.getElementById(bigImageDiv);
+    div.focus();
+    div.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if(evt.keyCode == 27) {
+            hideBigImage();
+        }
+        if(evt.keyCode == 39) {
+            index++;
+            index = index % (myList.length);
+            document.getElementById(bigImage).src = myList[index].image;
+        }
+        if(evt.keyCode == 37) {
+            index--;
+            index += myList.length;
+            index = index % (myList.length);
+            document.getElementById(bigImage).src = myList[index].image;
+        }
+        console.log("keydown: " + evt.keyCode);
+    };
 }
