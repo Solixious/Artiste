@@ -19,6 +19,8 @@ var contentContact = 'content-contact';
 var linkContact = 'link-contact';
 var contentBlocking = 'content-blocking';
 var contentImage = 'content-image';
+var bigImageDiv = 'big-image-div';
+var bigImage = 'big-image';
 var block = 'block';
 var none = 'none';
 var div = 'div';
@@ -43,9 +45,16 @@ function loadImages(divName, images) {
         newDiv.className = contentImage;
         var newImg = document.createElement(img);
         newImg.src = images[i].image;
+        newImg.setAttribute('onclick', 'displayPicture(\'' + images[i].image + '\')');
         newDiv.appendChild(newImg);
         imageDiv.appendChild(newDiv);
     }
+}
+
+function displayPicture(image) {
+    document.getElementById(bigImageDiv).style.display=block;
+    document.getElementById(bigImage).src=image;
+    console.log(image);
 }
 
 function selectDrawing() {
@@ -103,4 +112,7 @@ function hideAll() {
     document.getElementById(linkDrawing).style.color = navUnselectedColor;
     document.getElementById(linkAbout).style.color = navUnselectedColor;
     document.getElementById(linkContact).style.color = navUnselectedColor;
+}
+function hideBigImage() {
+    document.getElementById(bigImageDiv).style.display=none;
 }

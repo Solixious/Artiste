@@ -47,5 +47,8 @@
             </div>
         </div>
         <div id="footer">Made with <span class="red-font">&hearts;</span> by Pratyush Choudhary</div>
+        <div id="big-image-div" style="display:none" onclick="hideBigImage()">
+            <img src='#' id="big-image"/>
+        </div>
     </body>
 </html>
