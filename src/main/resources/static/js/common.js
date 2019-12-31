@@ -29,6 +29,7 @@ var div = 'div';
 var img = 'img';
 var navSelectedColor = '#cc3333';
 var navUnselectedColor = '#878787';
+var hash = '#';
 
 var drawing = 'drawing';
 var photograph = 'photograph';
@@ -123,14 +124,15 @@ function displayPicture(index, type) {
     } else {
         myList = photographs;
     }
-    document.getElementById(bigImageDiv).style.display=block;
     document.getElementById(bigImage).src=myList[index].image;
     document.getElementById(bigImageTitle).innerHTML = myList[index].title;
+    document.getElementById(bigImageDiv).style.display=block;
     var div = document.getElementById(bigImageDiv);
     div.focus();
     div.onkeydown = function(evt) {
         evt = evt || window.event;
         if(evt.keyCode == 27) {
+            document.getElementById(bigImage).src = hash;
             hideBigImage();
         }
         if(evt.keyCode == 39) {
