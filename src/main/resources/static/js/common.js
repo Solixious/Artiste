@@ -22,6 +22,7 @@ var contentBlocking = 'content-blocking';
 var contentImage = 'content-image';
 var bigImageDiv = 'big-image-div';
 var bigImage = 'big-image';
+var bigImageTitle = 'big-image-title';
 var block = 'block';
 var none = 'none';
 var div = 'div';
@@ -124,6 +125,7 @@ function displayPicture(index, type) {
     }
     document.getElementById(bigImageDiv).style.display=block;
     document.getElementById(bigImage).src=myList[index].image;
+    document.getElementById(bigImageTitle).innerHTML = myList[index].title;
     var div = document.getElementById(bigImageDiv);
     div.focus();
     div.onkeydown = function(evt) {
@@ -135,12 +137,14 @@ function displayPicture(index, type) {
             index++;
             index = index % (myList.length);
             document.getElementById(bigImage).src = myList[index].image;
+            document.getElementById(bigImageTitle).innerHTML = myList[index].title;
         }
         if(evt.keyCode == 37) {
             index--;
             index += myList.length;
             index = index % (myList.length);
             document.getElementById(bigImage).src = myList[index].image;
+            document.getElementById(bigImageTitle).innerHTML = myList[index].title;
         }
         console.log("keydown: " + evt.keyCode);
     };
