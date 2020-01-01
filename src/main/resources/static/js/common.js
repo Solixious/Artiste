@@ -127,9 +127,9 @@ function displayPicture(index, type) {
     document.getElementById(bigImage).src=myList[index].image;
     document.getElementById(bigImageTitle).innerHTML = myList[index].title;
     document.getElementById(bigImageDiv).style.display=block;
-    var div = document.getElementById(bigImageDiv);
-    div.focus();
-    div.onkeydown = function(evt) {
+    var focusDiv = document.getElementById(bigImageDiv);
+    focusDiv.focus();
+    focusDiv.onkeydown = function(evt) {
         evt = evt || window.event;
         if(evt.keyCode == 27) {
             document.getElementById(bigImage).src = hash;
@@ -138,16 +138,18 @@ function displayPicture(index, type) {
         if(evt.keyCode == 39) {
             index++;
             index = index % (myList.length);
-            document.getElementById(bigImage).src = myList[index].image;
-            document.getElementById(bigImageTitle).innerHTML = myList[index].title;
+            updateBigImage(myList[index]);
         }
         if(evt.keyCode == 37) {
             index--;
             index += myList.length;
             index = index % (myList.length);
-            document.getElementById(bigImage).src = myList[index].image;
-            document.getElementById(bigImageTitle).innerHTML = myList[index].title;
+            updateBigImage(myList[index]);
         }
         console.log("keydown: " + evt.keyCode);
     };
+}
+function updateBigImage(imageObject) {
+    document.getElementById(bigImage).src = imageObject.image;
+    document.getElementById(bigImageTitle).innerHTML = imageObject.title;
 }
